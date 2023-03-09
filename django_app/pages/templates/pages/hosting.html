@@ -1,0 +1,885 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}Shared Server Hosting | Get Your Own Server - Hostx.com{% endblock title %}
+{% block page_css %}{% static 'assets/css/pages/shared-hosting.css' %}{% endblock page_css %}
+
+{% block content %}
+<!-- Header -->
+<div class="header f-header text-lg-right text-center">
+    <div class="container-fluid">
+        <!-- navigator -->
+        <div class="navigator d-md-flex align-items-center justify-content-start d-none">
+            <!-- title -->
+            <div class="title">هاست</div>
+            <!-- item -->
+            {% for cate in categories %}
+            <a href="{{cate.get_absolute_url}}" class="item">{{cate.name}}</a>
+
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container position-relative">
+        <!-- row -->
+        <div class="row">
+            <!-- col -->
+            <div class="col-xl-6 col-lg-8">
+                <!-- title-5 -->
+                <h5 class="title-5">{{host_cate.name}} {{"ایران و اروپا"}}</h5>
+                <!-- title-1 -->
+                <h1 class="title-1">{{host_cate.name}}</h1>
+                <!-- para-1 -->
+                <p class="para-1 mb-3">{{host_cate.text}}</p>
+                <!-- btn -->
+                <button type="button" data-click-type="scroll-to" data-scroll="#se-i"
+                    class="btn btn-fill-success shadow-off font-500">انتخاب کنید</button>
+            </div>
+        </div>
+        <!-- hero -->
+        {% if host_cate.image %}
+        <img data-src="{{host_cate.image.get_photo_url}}" class="lazy hero img-fluid" alt="Image">
+        {% endif %}
+    </div>
+</div>
+
+<!-- Section I -->
+<div class="se-i py-90 bg-2" id="se-i">
+    <div class="container">
+        <!-- se-head -->
+        <div class="se-head mb-5">
+            <h3 class="se-title-1">از بین بسته های موجود انتخاب کنید</h3>
+            <h4 class="se-title-2">بسته های {{host_cate.name}} </h4>
+        </div>
+
+        <div id="hosting-plans">
+            <!-- filter-bar -->
+            <div class="filter-bar">
+                <!-- row -->
+                <div class="row justify-content-center">
+                    <!-- col -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <!-- item -->
+                        <div class="item active" data-show="iran">ایران</div>
+                    </div>
+                    <!-- col -->
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <!-- item -->
+                        <div class="item" data-show="europe">اروپا</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- plans -->
+            <div class="plans mb-2 filter-iran show">
+                <!-- row -->
+                <div class="row">
+                    {% include 'pages/hosting/host-plans.html' with hosts=host_iran %}
+                    <!-- col -->
+                </div>
+            </div>
+
+
+
+            <!-- plans -->
+            <div class="plans mb-2 filter-europe">
+                <!-- row -->
+                <div class="row">
+                    {% include 'pages/hosting/host-plans.html' with hosts=host_ero %}
+                    <!-- col -->
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        <!-- se-footer -->
+        <div class="se-footer d-flex align-items-center justify-content-center flex-wrap">
+            <!-- line -->
+            <div class="line d-flex align-items-center justify-content-start">
+                <img data-src="{% static 'assets/images/icons/check-circle.svg' %}" class="lazy icon img-fluid"
+                    alt="Check">
+                <span class="text">بکاپ ماهیانه</span>
+            </div>
+            <!-- line -->
+            <div class="line d-flex align-items-center justify-content-start">
+                <img data-src="{% static 'assets/images/icons/check-circle.svg' %}" class="lazy icon img-fluid"
+                    alt="Check">
+                <span class="text">رایگان های رایگان پسند</span>
+            </div>
+            <!-- line -->
+            <div class="line d-flex align-items-center justify-content-start">
+                <img data-src="{% static 'assets/images/icons/check-circle.svg' %}" class="lazy icon img-fluid"
+                    alt="Check">
+                <span class="text">اینوایورمنت </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Section II -->
+<div class="se-ii">
+    <div class="container">
+        <!-- row -->
+        <div class="row justify-content-center">
+            <!-- content -->
+            <div class="content text-lg-right text-md-center text-right">
+                <!-- row -->
+                <div class="row align-items-center">
+                    <!-- col -->
+                    <div class="col-lg-6 pr-xl-3 mb-lg-0 mb-2">
+                        <!-- side-img -->
+                        <img data-src="{% static 'assets/images/pages/about/02.png' %}" class="side-img lazy img-fluid"
+                            alt="Image">
+                    </div>
+                    <!-- col -->
+                    <div class="col-lg-6 pl-xl-3">
+                        <!-- title-2 -->
+                        <h4 class="title-2">مشاوره رایگان</h4>
+                        <!-- title-2 -->
+                        <h2 class="title-1">در خصوص سفارش سفارش سرویس مناسب نیاز به مشاوره دارید؟</h2>
+                        <!-- para-2 -->
+                        <p class="para-2">اگر نمی‌دانید کدام سرویس برای شما مناسب است یا برای سفارش سرویس مناسب نیاز به
+                            مشاوره دارید کارشناسان لورا هاست آماده‌ی راهنمایی شما هستند کافی است از طریق چت آنلاین کنار
+                            صفحه سوال خود را مطراح کنید یا تماس بگیرید.</p>
+                    </div>
+                </div>
+                <!-- row -->
+                <div class="row align-items-center">
+                    <!-- col -->
+                    <div class="col-lg-6 pr-xl-3 order-lg-1 order-2">
+                        <!-- title-2 -->
+                        <h4 class="title-2">پشتیبانی ۲۴ ساعته</h4>
+                        <!-- title-2 -->
+                        <h2 class="title-1">۲۴ ساعت روز، ۷ روز هفته، ۳۶۵ روز سال آماده‌ی پشتیبانی و پاسخگویی به سوالات
+                            شما هستیم</h2>
+                        <!-- para-2 -->
+                        <p class="para-2">اگر در هنگام استفاده از سرویس ها سوالی دارید یا مشکلی در استفاده از سرویس وجود
+                            دارد کافیست از طریق پنل کاربری یک تیکت ثبت کنید و سوال خود را مطرح کنید. کارشناسان فنی لورا
+                            هاست در سریع ترین زمان ممکن پاسخگوی شما خواهند بود</p>
+                    </div>
+                    <!-- col -->
+                    <div class="col-lg-6 pl-xl-3 mb-lg-0 mb-2 order-lg-2 order-1">
+                        <!-- side-img -->
+                        <img data-src="{% static 'assets/images/pages/about/03.png' %}" class="side-img lazy img-fluid"
+                            alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Section II -->
+<div class="se-ii py-120-75 bg-2">
+    <div class="container">
+        <!-- se-head -->
+        <div class="se-head mb-5">
+            <h3 class="se-title-1">دیگر ویژگی‌های هاست پایتون لورا هاست</h3>
+            <h4 class="se-title-2">ویژگی‌های هاست پایتون</h4>
+        </div>
+        <!-- space -->
+        <div class="space space-sm"></div>
+        <!-- row -->
+        <div class="row">
+            <!-- col -->
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <!-- box -->
+                <div class="box">
+                    <!-- box-icon -->
+                    <div class="box-icon d-flex align-items-center justify-content-start">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/lock.png' %}"
+                            class="d-img lazy img-fluid" alt="Icon">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/lock-l.png' %}"
+                            class="l-img lazy img-fluid" alt="Icon">
+                    </div>
+                    <!-- box-title -->
+                    <h4 class="box-title">فیچر ۱</h4>
+                    <!-- box-para -->
+                    <p class="box-para">توضبحات لورم ایپسورم راجب این فیچر و کلا داستاناش و فیلان و اچ تی ام ال ادیت
+                        کردن همانا و معتاد شدن همان</p>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <!-- box -->
+                <div class="box">
+                    <!-- box-icon -->
+                    <div class="box-icon d-flex align-items-center justify-content-start">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/renew.png' %}"
+                            class="d-img lazy img-fluid" alt="Icon">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/renew-l.png' %}"
+                            class="l-img lazy img-fluid" alt="Icon">
+                    </div>
+                    <!-- box-title -->
+                    <h4 class="box-title">فیچر ۱</h4>
+                    <!-- box-para -->
+                    <p class="box-para">توضبحات لورم ایپسورم راجب این فیچر و کلا داستاناش و فیلان و اچ تی ام ال ادیت
+                        کردن همانا و معتاد شدن همان</p>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <!-- box -->
+                <div class="box">
+                    <!-- box-icon -->
+                    <div class="box-icon d-flex align-items-center justify-content-start">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/forward-button.png' %}"
+                            class="d-img lazy img-fluid" alt="Icon">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/forward-button-l.png' %}"
+                            class="l-img lazy img-fluid" alt="Icon">
+                    </div>
+                    <!-- box-title -->
+                    <h4 class="box-title">فیچر ۱</h4>
+                    <!-- box-para -->
+                    <p class="box-para">توضبحات لورم ایپسورم راجب این فیچر و کلا داستاناش و فیلان و اچ تی ام ال ادیت
+                        کردن همانا و معتاد شدن همان</p>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <!-- box -->
+                <div class="box">
+                    <!-- box-icon -->
+                    <div class="box-icon d-flex align-items-center justify-content-start">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/shield.png' %}"
+                            class="d-img lazy img-fluid" alt="Icon">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/shield-l.png' %}"
+                            class="l-img lazy img-fluid" alt="Icon">
+                    </div>
+                    <!-- box-title -->
+                    <h4 class="box-title">فیچر ۱</h4>
+                    <!-- box-para -->
+                    <p class="box-para">توضبحات لورم ایپسورم راجب این فیچر و کلا داستاناش و فیلان و اچ تی ام ال ادیت
+                        کردن همانا و معتاد شدن همان</p>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <!-- box -->
+                <div class="box">
+                    <!-- box-icon -->
+                    <div class="box-icon d-flex align-items-center justify-content-start">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/dns.png' %}"
+                            class="d-img lazy img-fluid" alt="Icon">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/dns-l.png' %}"
+                            class="l-img lazy img-fluid" alt="Icon">
+                    </div>
+                    <!-- box-title -->
+                    <h4 class="box-title">فیچر ۱</h4>
+                    <!-- box-para -->
+                    <p class="box-para">توضبحات لورم ایپسورم راجب این فیچر و کلا داستاناش و فیلان و اچ تی ام ال ادیت
+                        کردن همانا و معتاد شدن همان</p>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <!-- box -->
+                <div class="box">
+                    <!-- box-icon -->
+                    <div class="box-icon d-flex align-items-center justify-content-start">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/brain.png' %}"
+                            class="d-img lazy img-fluid" alt="Icon">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/brain-l.png' %}"
+                            class="l-img lazy img-fluid" alt="Icon">
+                    </div>
+                    <!-- box-title -->
+                    <h4 class="box-title">فیچر ۱</h4>
+                    <!-- box-para -->
+                    <p class="box-para">توضبحات لورم ایپسورم راجب این فیچر و کلا داستاناش و فیلان و اچ تی ام ال ادیت
+                        کردن همانا و معتاد شدن همان</p>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <!-- box -->
+                <div class="box">
+                    <!-- box-icon -->
+                    <div class="box-icon d-flex align-items-center justify-content-start">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/bell.png' %}"
+                            class="d-img lazy img-fluid" alt="Icon">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/bell-l.png' %}"
+                            class="l-img lazy img-fluid" alt="Icon">
+                    </div>
+                    <!-- box-title -->
+                    <h4 class="box-title">فیچر ۱</h4>
+                    <!-- box-para -->
+                    <p class="box-para">توضبحات لورم ایپسورم راجب این فیچر و کلا داستاناش و فیلان و اچ تی ام ال ادیت
+                        کردن همانا و معتاد شدن همان</p>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <!-- box -->
+                <div class="box">
+                    <!-- box-icon -->
+                    <div class="box-icon d-flex align-items-center justify-content-start">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/jack-cable.png' %}"
+                            class="d-img lazy img-fluid" alt="Icon">
+                        <img data-src="{% static 'assets/images/pages/domains/icons/jack-cable-l.png' %}"
+                            class="l-img lazy img-fluid" alt="Icon">
+                    </div>
+                    <!-- box-title -->
+                    <h4 class="box-title">فیچر ۱</h4>
+                    <!-- box-para -->
+                    <p class="box-para">توضبحات لورم ایپسورم راجب این فیچر و کلا داستاناش و فیلان و اچ تی ام ال ادیت
+                        کردن همانا و معتاد شدن همان</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- FAQs -->
+<div class="faqs py-90" id="faqs">
+    <div class="container">
+        <!-- se-head -->
+        <div class="se-head">
+            <h3 class="se-title-1">سوالات متدوال</h3>
+            <h4 class="se-title-2">سوالی دارید؟<br>سوالات متداول هاست پایتون لورا هاست:</h4>
+        </div>
+        <!-- space -->
+        <div class="space space-sm"></div>
+        <!-- row -->
+        <div class="row">
+            <!-- col -->
+            <div class="col-xl-4 pr-xl-3 mb-xl-0 mb-2">
+                <!-- category -->
+                <div class="category" id="faqs-category">
+                    <!-- item -->
+                    <div class="item active" data-category="general">
+                        <img src="{% static 'assets/images/icons/Info Circle.svg' %}" class="icon img-fluid" alt="Icon">
+                        <div class="text">
+                            <h5 class="item-title">سوالات سرویس</h5>
+                            <p class="item-des">سوالات مربوط به سرویس دهی</p>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="item" data-category="features">
+                        <img src="{% static 'assets/images/icons/Star.svg' %}" class="icon img-fluid" alt="Icon">
+                        <div class="text">
+                            <h5 class="item-title">سوالات فنی</h5>
+                            <p class="item-des">سوالات امکانات فنی هاست لینوکس اقتصادی</p>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="item" data-category="privacy">
+                        <img src="{% static 'assets/images/icons/Lock.svg' %}" class="icon img-fluid" alt="Icon">
+                        <div class="text">
+                            <h5 class="item-title">سوالات پشتیبانی</h5>
+                            <p class="item-des">پاسخ به سوالات پشتیبانی سرویس</p>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="item" data-category="pricing">
+                        <img src="{% static 'assets/images/icons/Wallet.svg' %}" class="icon img-fluid" alt="Icon">
+                        <div class="text">
+                            <h5 class="item-title">سوالات هزینه</h5>
+                            <p class="item-des">سوالات مربوط به قیمت گذاری و هزینه‌ها</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-xl-8">
+                <!-- content -->
+                <div class="content">
+                    <!-- box -->
+                    <div class="box category-general">
+                        <!-- box-head -->
+                        <div class="box-head">
+                            <img src="{% static 'assets/images/icons/Info Circle.svg' %}" class="icon img-fluid"
+                                alt="Icon">
+                            <div class="text">
+                                <h5 class="box-title">سوالات سرویس</h5>
+                                <p class="box-des">سوالات مربوط به سرویس دهی</p>
+                            </div>
+                        </div>
+                        <!-- box-body -->
+                        <div class="box-body">
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">آیا امکان ارتقا و تنرل بسته فراهم است؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">آیا امکان ارتقا یا تنزل از یک محصول به محصول دیگر وجود دارد؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">آیا امکان تغییر هاست ایران به هاست خارج از ایران در حین استفاده از
+                                        سرویس وجود دارد؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی <a href="#">خلاصه</a> لورم ایپسورم پاسخ به
+                                        سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن صفحات و اضافات
+                                        اینچنینی و آنچنانی</a></p>
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی <a href="#">و سخت بودن ادیت اچ تی ام ال همانا
+                                            و بیماری های مضمن همان</a></p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">جواب سوالم رو در بین سوال ها پیدا نکردم</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- box -->
+                    <div class="box category-features">
+                        <!-- box-head -->
+                        <div class="box-head">
+                            <img src="{% static 'assets/images/icons/Star.svg' %}" class="icon img-fluid" alt="Icon">
+                            <div class="text">
+                                <h5 class="box-title">سوالات فنی</h5>
+                                <p class="box-des">سوالات امکانات فنی هاست لینوکس اقتصادی</p>
+                            </div>
+                        </div>
+                        <!-- box-body -->
+                        <div class="box-body">
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    =
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- box -->
+                    <div class="box category-privacy">
+                        <!-- box-head -->
+                        <div class="box-head">
+                            <img src="{% static 'assets/images/icons/Lock.svg' %}" class="icon img-fluid" alt="Icon">
+                            <div class="text">
+                                <h5 class="box-title">سوالات پشتیبانی</h5>
+                                <p class="box-des">پاسخ به سوالات پشتیبانی سرویس</p>
+                            </div>
+                        </div>
+                        <!-- box-body -->
+                        <div class="box-body">
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- box -->
+                    <div class="box category-pricing">
+                        <!-- box-head -->
+                        <div class="box-head">
+                            <img src="{% static 'assets/images/icons/Wallet.svg' %}" class="icon img-fluid" alt="Icon">
+                            <div class="text">
+                                <h5 class="box-title">سوالات هزینه</h5>
+                                <p class="box-des">سوالات مربوط به قیمت گذاری و هزینه‌ها</p>
+                            </div>
+                        </div>
+                        <!-- box-body -->
+                        <div class="box-body">
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                            <!-- q -->
+                            <div class="q">
+                                <!-- q-h -->
+                                <div class="q-h">
+                                    <!-- text -->
+                                    <h4 class="text">سوال لورم ایپسورم؟</h4>
+                                    <!-- plus -->
+                                    <div class="plus">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <!-- q-b -->
+                                <div class="q-b">
+                                    <p>لورم ایپسورم پاسخ به سوال موجود در بخش سوالات متداول و توضیحات موجود برای پر کردن
+                                        صفحات و اضافات اینچنینی و آنچنانی</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

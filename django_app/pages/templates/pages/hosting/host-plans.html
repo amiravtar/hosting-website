@@ -1,0 +1,80 @@
+{% load static %}
+{% load humanize %}
+
+{% for host in hosts %}
+                    <div class="col-xl-3 col-md-6 mb-2">
+                        <!-- plan -->
+                        <div class="plan">
+                            <!-- popular-box -->
+                            {% if host.trending %}
+                                <div class="popular-box">
+                                    <img data-src="{% static 'assets/images/pages/shared-hosting/trending.png' %}" class="lazy img-fluid"
+                                        alt="Icon">
+                                </div>
+                            {% endif %}
+                            <!-- plan-icon -->
+                            <div class="plan-icon">
+                                {% if host.image %}
+                                    <img data-src="{{host.get_photo_url}}" class="lazy img-fluid" alt="Icon">
+                                {% endif %}
+                            </div>
+                            <!-- plan-head -->
+                            <div class="plan-head">
+                                <!-- plan-name -->
+                                <h3 class="plan-name">{{host.title}}</h3>
+                                <!-- plan-para -->
+                                <p class="plan-para">{{host.sub_title}}</p>
+                            </div>
+                            <!-- plan-price -->
+                            <div class="plan-price">
+                                <!-- price -->
+                                <h4 class="price">{{host.price|intcomma:False}} هزار تومان</h4>
+                                <!-- price-comment -->
+                                <p class="price-comment">{{host.sub_price}}/</p>
+                            </div>
+                            <!-- actions -->
+                            <div class="actions">
+                                <a href="#" class="btn btn-fill-primary btn-sm shadow-off w-100">ثبت سفارش</a>
+                            </div>
+                            <!-- group -->
+                            <div class="group group-l">
+                                <!-- list -->
+                                <ul class="list list-unstyled">
+                                        {% if host.specs.count > 0 %}
+                                                {% for spec in host.specs.all %}
+                                                        {% if spec.typ == "main" %}
+                                                                <li><img data-src="{{spec.icon.get_photo_url}}"
+                                                                        class="lazy img-fluid" alt="Icon">{% if spec.slashed %}<del>{{spec.title}}</del>{% else %}{{spec.title}}{% endif %}
+                                                                        {% if spec.detail %}<span class="float-box"
+                                                                        data-text="یک طرح اقتصادی 25 گیگابایتی با دامنه و ایمیل منطبق (با شرایط 12 در ماه یا بیشتر)."></span>{% else %}{% endif %}
+                                                                </li>
+                                                        {% endif %}
+                                                {% endfor %}
+                                        {% endif %}
+                                        <!-- TODO:Add the dynamic specs -->
+                                </ul>
+                            </div>
+                            <!-- hr -->
+                            <div class="hr position-relative"><span>💎</span></div>
+                            <!-- group -->
+                            <div class="group">
+                                <!-- title-4 -->
+                                <h4 class="title-4">جزییات فنی</h4>
+                                <!-- list -->
+                                <ul class="list list-unstyled">
+                                        {% if host.specs.count > 0 %}
+                                                {% for spec in host.specs.all %}
+                                                        {% if spec.typ == "sub" %}
+                                                                <li><img data-src="{{spec.icon.get_photo_url}}"
+                                                                        class="lazy img-fluid" alt="Icon">{% if spec.slashed %}<del>{{spec.title}}</del>{% else %}{{spec.title}}{% endif %}
+                                                                        {% if spec.detail %}<span class="float-box"
+                                                                        data-text="یک طرح اقتصادی 25 گیگابایتی با دامنه و ایمیل منطبق (با شرایط 12 در ماه یا بیشتر)."></span>{% else %}{% endif %}
+                                                                </li>
+                                                        {% endif %}
+                                                {% endfor %}
+                                        {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}

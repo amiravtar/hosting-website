@@ -1,0 +1,575 @@
+{% extends 'base/base.html' %}
+{% load static %}
+<!-- description
+title_meta
+keywords -->
+{% block title %}salam{% endblock title %}
+{% block page_css %}{% static 'assets/css/index.css' %}{% endblock page_css %}
+
+{% block content %}
+
+<!-- Header -->
+<header class="main-header">
+  <div class="container">
+    <!-- row -->
+    <div class="row align-items-center">
+
+      <!-- col -->
+      <div class="col-xl-7 text-xl-right text-center">
+        <!-- title-1 & para-1 -->
+        <h1 class="title-1 text-uppercase mb-2 mx-xl-0 mx-auto">لورا هاست<br>قدرتمند، منعطف !</h1>
+        <p class="para-1 mb-2 mx-xl-0 mx-auto">کوچک یا بزرگ، حرفه‌ای یا تازه کار، رضایت شما برای ما بسیار مهم است<br>لورا هاست، میزبان ایده‌های شما </p>
+        <!-- notify -->
+        <div class="notify glassy mb-4">
+          <div class="icon">
+            <img data-src="{% static 'assets/images/icons/two-tone-icons/Heart.svg' %}" class="lazy img-fluid" alt="Bell">
+          </div>
+          <div class="text">نیاز به مشاوره دارید؟</div>
+        </div>
+        <!-- buttons -->
+        <div class="buttons">
+          <a href="#" class="btn btn-fill-primary shadow-off mr-1 mb-md-0 mb-1">خرید هاست</a>
+          <a href="#" class="btn btn-outline-dark shadow-off">ورود</a>
+        </div>
+      </div>
+
+      <!-- col -->
+      <div class="col-xl-5 d-xl-block d-none">
+        <!-- form-container -->
+        <div class="form-container" id="form-container">
+
+
+
+
+
+
+          <!-- header-form -->
+          <form action="{{WHMCS_DOMAIN_SEARCH}}" method="GET" class="header-form ml-auto" id="header-form">
+            <img src="{% static 'assets/images/icons/domain.png' %}" class="domaim-img" alt="Icon">
+            <input type="hidden" name="a" value="add">
+            <input type="hidden" name="domain" value="register">
+            <!-- form-title -->
+            <h2 class="form-title mb-2">شروع کنید!<br>یک دامنه برای کسب و کارتان ثبت کنید</h2>
+
+            <!-- inputs -->
+            <div class="inputs">
+
+              <!-- form-label -->
+              <label for="query" class="form-label">
+                <input type="text" name="query" class="glassy" id="query" placeholder="مثال: example.ir" autocomplete="off" required>
+              </label>
+
+            </div>
+
+            <!-- submit-button -->
+            <button type="submit" class="btn btn-fill-success shadow-off w-100 font-500 mb-2 mt-1">جستجو</button>
+
+            <!-- hr -->
+            <div class="hr position-relative"><span>یا</span></div>
+
+            <!-- links -->
+            <div class="row small-gutters mt-2">
+
+
+              <!-- col -->
+              <div class="col-12">
+                <a href="{% url 'pages:Domains' %}" class="btn btn-outline-dark level-up shadow-off w-100 font-500"><img data-src="{% static 'assets/images/icons/outline icons/Show.svg' %}" class="lazy btn-icon img-fluid" alt="Google">لیست دامنه ها</a>
+              </div>
+
+            </div>
+
+            <!-- form-comment -->
+            <!-- <div class="form-comment mt-2">$100, 60-day free trial requires valid credit card.<br>By signing up, you agree to the <a href="#">Terms of Service</a>.</div> -->
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+ <!-- Section I -->
+ <div class="se-i text-lg-right text-center">
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <!-- col -->
+        <div class="col-lg-3 col-6 mb-lg-0 mb-2">
+          <!-- box -->
+          <div class="box">
+            <img data-src="{% static 'assets/images/icons/outline icons/Plus.svg' %}" class="lazy box-icon" alt="Mail">
+            <h2 class="box-title mb-0">شــمـا<br>بسپاریدش به ما!</h2>
+          </div>
+        </div>
+
+        <!-- col -->
+        <div class="col-lg-3 col-6 mb-lg-0 mb-2">
+          <!-- box -->
+          <div class="box">
+            <img data-src="{% static 'assets/images/icons/outline icons/Shield Done.svg' %}" class="lazy box-icon" alt="Logout">
+            <h2 class="box-title mb-0">مــــا<br>پشتیبان شما هستیم</h2>
+          </div>
+        </div>
+
+        <!-- col -->
+        <div class="col-lg-3 col-6">
+          <!-- box -->
+          <div class="box">
+            <img data-src="{% static 'assets/images/icons/outline icons/Game.svg' %}" class="lazy box-icon" alt="Digital">
+            <h2 class="box-title mb-0">شــمـا<br>خیالتون راحته</h2>
+          </div>
+        </div>
+
+        <!-- col -->
+        <div class="col-lg-3 col-6">
+          <!-- box -->
+          <div class="box">
+            <img data-src="{% static 'assets/images/icons/outline icons/Scan.svg' %}" class="lazy box-icon" alt="Wishlist">
+            <h2 class="box-title mb-0">مــــا<br>حواسمون جمعه!</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section II -->
+  <div class="se-ii bg-2">
+    <div class="container">
+      <!-- row -->
+      <div class="row align-items-center">
+        <!-- col -->
+        <div class="col-xl-4 col-12 text-xl-right text-center mb-xl-0 mb-5">
+          <!-- title-1 -->
+          <h2 class="title-1 mb-1">
+            <span>قدرتمند</span><br class="d-xl-block d-none">
+            <span>پـایــدار</span><br class="d-xl-block d-none">
+            <span>منـعطف</span><br>
+            <span class="primary-color">انتخاب کنید</span>
+          </h2>
+          <!-- para-1 -->
+          <p class="para-1 mb-0">و بی دغدغه کسب و کارتان را توسعه دهید</p>
+        </div>
+        <!-- col -->
+        <div class="col-xl-8 col-12">
+          <!-- row -->
+          <div class="row justify-content-center">
+            <!-- col -->
+            {% for cate in HOST_CATEGORIES %}
+            <div class="col-lg-2 col-md-3 col-6">
+              <!-- item -->
+              <a href="{{cate.get_absolute_url}}">
+                <div class="item text-center">
+                  <img data-src="{{cate.get_icon_url}}" class="lazy img-fluid" alt="Windows">
+                  <h3 class="text mb-0">{{cate.name}}</h3>
+                </div>
+              </a>
+            </div>
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- Section II -->
+<div class="se-ii">
+  <div class="container">
+    <!-- row -->
+    <div class="row justify-content-center">
+    <!-- content -->
+    <div class="content text-lg-right text-md-center text-right">
+      <!-- row -->
+      <div class="row align-items-center">
+        <!-- col -->
+        <div class="col-lg-6 pr-xl-3 mb-lg-0 mb-2">
+          <!-- side-img -->
+          <img data-src="{% static 'assets/images/pages/about/02.png' %}" class="side-img lazy img-fluid" alt="Image">
+        </div>
+        <!-- col -->
+        <div class="col-lg-6 pl-xl-3">
+          <!-- title-2 -->
+          <h4 class="title-2">مشاوره رایگان</h4>
+          <!-- title-2 -->
+          <h2 class="title-1">در خصوص سفارش سفارش سرویس مناسب نیاز به مشاوره دارید؟</h2>
+          <!-- para-2 -->
+          <p class="para-2">اگر نمی‌دانید کدام سرویس برای شما مناسب است یا برای سفارش سرویس مناسب نیاز به مشاوره دارید کارشناسان لورا هاست آماده‌ی راهنمایی شما هستند کافی است از طریق چت آنلاین کنار صفحه سوال خود را مطراح کنید یا تماس بگیرید.</p>
+        </div>
+      </div>
+      <!-- row -->
+      <div class="row align-items-center">
+        <!-- col -->
+        <div class="col-lg-6 pr-xl-3 order-lg-1 order-2">
+          <!-- title-2 -->
+          <h4 class="title-2">پشتیبانی ۲۴ ساعته</h4>
+          <!-- title-2 -->
+          <h2 class="title-1">۲۴ ساعت روز، ۷ روز هفته، ۳۶۵ روز سال آماده‌ی پشتیبانی و پاسخگویی به سوالات شما هستیم</h2>
+          <!-- para-2 -->
+          <p class="para-2">اگر در هنگام استفاده از سرویس ها سوالی دارید یا مشکلی در استفاده از سرویس وجود دارد کافیست از طریق پنل کاربری یک تیکت ثبت کنید و سوال خود را مطرح کنید. کارشناسان فنی  لورا هاست در سریع ترین زمان ممکن پاسخگوی شما خواهند بود</p>
+        </div>
+        <!-- col -->
+        <div class="col-lg-6 pl-xl-3 mb-lg-0 mb-2 order-lg-2 order-1">
+          <!-- side-img -->
+          <img data-src="{% static 'assets/images/pages/about/03.png' %}" class="side-img lazy img-fluid" alt="Image">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+  <!-- Section IV -->
+  <div class="se-iv py-90 bg-2">
+    <div class="container">
+      <!-- se-head -->
+      <div class="se-head">
+        <h3 class="se-title-1">چرا لورا هاست</h3>
+        <h4 class="se-title-2">لورا هاست، میزبان ایده‌های شما</h4>
+      </div>
+      <!-- space -->
+      <div class="space space-sm"></div>
+      <!-- row -->
+      <div class="row justify-content-center">
+        <!-- col -->
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+          <!-- box -->
+          <div class="box color-1">
+            <!-- link -->
+            <a href="#" class="box-link"></a>
+            <!-- icon -->
+            <div class="icon">
+              <img data-src="{% static 'assets/images/icons/bulk icons/Lockb.svg' %}" class="lazy img-fluid" alt="businessman">
+            </div>
+            <!-- box-title -->
+            <h4 class="box-title">SSL<br>رایگان</h4>
+            <!-- box-para -->
+            <p class="box-para">لورم ایپسورم متنی نامفهوم برای طراحان جهت نوشتن چرت و پرت<br>مرسی اه.</p>
+            <!-- arrow -->
+
+          </div>
+        </div>
+        <!-- col -->
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+          <!-- box -->
+          <div class="box color-2">
+            <!-- link -->
+            <a href="#" class="box-link"></a>
+            <!-- icon -->
+            <div class="icon">
+              <img data-src="{% static 'assets/images/icons/bulk icons/Sendr.svg' %}" class="lazy img-fluid" alt="priority">
+            </div>
+            <!-- box-title -->
+            <h4 class="box-title">بهینه<br>برای وردپرس</h4>
+            <!-- box-para -->
+            <p class="box-para">لورم ایپسورم متنی نامفهوم برای طراحان جهت نوشتن چرت و پرت<br>مرسی اه.</p>
+            <!-- arrow -->
+
+          </div>
+        </div>
+        <!-- col -->
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+          <!-- box -->
+          <div class="box color-3">
+            <!-- link -->
+            <a href="#" class="box-link"></a>
+            <!-- icon -->
+            <div class="icon">
+              <img data-src="{% static 'assets/images/icons/bulk icons/Foldery.svg' %}" class="lazy img-fluid" alt="mission">
+            </div>
+            <!-- box-title -->
+            <h4 class="box-title">بکاپ<br>روزانه و هفتگی</h4>
+            <!-- box-para -->
+            <p class="box-para">لورم ایپسورم متنی نامفهوم برای طراحان جهت نوشتن چرت و پرت<br>مرسی اه.</p>
+            <!-- arrow -->
+
+          </div>
+        </div>
+        <!-- col -->
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+          <!-- box -->
+          <div class="box color-4">
+            <!-- link -->
+            <a href="#" class="box-link"></a>
+            <!-- icon -->
+            <div class="icon">
+              <img data-src="{% static 'assets/images/icons/bulk icons/Shield Done.svg' %}" class="lazy img-fluid" alt="hula-hoop">
+            </div>
+            <!-- box-title -->
+            <h4 class="box-title">پایداری<br>بالا</h4>
+            <!-- box-para -->
+            <p class="box-para">لورم ایپسورم متنی نامفهوم برای طراحان جهت نوشتن چرت و پرت<br>مرسی اه.</p>
+            <!-- arrow -->
+
+          </div>
+        </div>
+        <!-- col -->
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+          <!-- box -->
+          <div class="box color-5">
+            <!-- link -->
+            <a href="#" class="box-link"></a>
+            <!-- icon -->
+            <div class="icon">
+              <img data-src="{% static 'assets/images/icons/bulk icons/Tick Squareg.svg' %}" class="lazy img-fluid" alt="data-storage-device">
+            </div>
+            <!-- box-title -->
+            <h4 class="box-title">نصب وردپرس<br>با ۱ کلیک</h4>
+            <!-- box-para -->
+            <p class="box-para">لورم ایپسورم متنی نامفهوم برای طراحان جهت نوشتن چرت و پرت<br>مرسی اه.</p>
+            <!-- arrow -->
+
+          </div>
+        </div>
+        <!-- col -->
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+          <!-- box -->
+          <div class="box color-6">
+            <!-- link -->
+            <a href="#" class="box-link"></a>
+            <!-- icon -->
+            <div class="icon">
+              <img data-src="{% static 'assets/images/icons/bulk icons/Chato.svg' %}" class="lazy img-fluid" alt="power">
+            </div>
+            <!-- box-title -->
+            <h4 class="box-title">پشتیبانی<br>24/7/365</h4>
+            <!-- box-para -->
+            <p class="box-para">لورم ایپسورم متنی نامفهوم برای طراحان جهت نوشتن چرت و پرت<br>مرسی اه.</p>
+            <!-- arrow -->
+
+          </div>
+        </div>
+        <!-- col -->
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-lg-0 mb-2">
+          <!-- box -->
+          <div class="box color-1">
+            <!-- link -->
+            <a href="#" class="box-link"></a>
+            <!-- icon -->
+            <div class="icon">
+              <img data-src="{% static 'assets/images/icons/bulk icons/Swapb.svg' %}" class="lazy img-fluid" alt="network">
+            </div>
+            <!-- box-title -->
+            <h4 class="box-title">انتقال<br>رایگان</h4>
+            <!-- box-para -->
+            <p class="box-para">لورم ایپسورم متنی نامفهوم برای طراحان جهت نوشتن چرت و پرت<br>مرسی اه.</p>
+            <!-- arrow -->
+
+          </div>
+        </div>
+        <!-- col -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <!-- box -->
+          <div class="box color-2">
+            <!-- link -->
+            <a href="#" class="box-link"></a>
+            <!-- icon -->
+            <div class="icon">
+              <img data-src="{% static 'assets/images/icons/bulk icons/Walletr.svg' %}" class="lazy img-fluid" alt="security-on">
+            </div>
+            <!-- box-title -->
+            <h4 class="box-title">بازگشت وجه<br> تا ۱۰ روز</h4>
+            <!-- box-para -->
+            <p class="box-para">لورم ایپسورم متنی نامفهوم برای طراحان جهت نوشتن چرت و پرت<br>مرسی اه.</p>
+            <!-- arrow -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section V -->
+  <div class="se-v py-90">
+    <div class="container">
+      <!-- se-head -->
+      <div class="se-head">
+        <h3 class="se-title-1">وبلاگ لورا هاست</h3>
+        <h4 class="se-title-2">مطالب و آموزش های لورا هاست</h4>
+      </div>
+      <!-- buttons -->
+      <div class="buttons text-center">
+        <a href="#" class="btn btn-fill-primary shadow-off">نمایش مطالب</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section VI -->
+  <div class="se-vi py-90 bg-2">
+    <div class="container">
+      <!-- se-head -->
+      <div class="se-head">
+        <h3 class="se-title-1">نظر مشتریان</h3>
+        <h4 class="se-title-2">نظر برخی از مشتریان درباره‌ لورا هاست</h4>
+      </div>
+      <!-- space -->
+      <div class="space space-sm"></div>
+      <!-- row -->
+      <div class="row">
+        <!-- col -->
+        <div class="col-xl-3 col-lg-6">
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-12">
+              <!-- box -->
+              <div class="box">
+                <!-- user-info -->
+                <div class="user-info">
+                  <img data-src="{% static 'assets/images/avatars/01.jpg' %}" class="lazy avatar img-fluid" alt="Avatar">
+                  <div class="name">لورم</div>
+                  <div class="job">مدیرعامل vis company</div>
+                </div>
+                <!-- quotes -->
+                <p class="quotes">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
+              </div>
+            </div>
+            <!-- col -->
+            <div class="col-12">
+              <!-- box -->
+              <div class="box">
+                <!-- user-info -->
+                <div class="user-info">
+                  <img data-src="{% static 'assets/images/avatars/02.jpg' %}" class="lazy avatar img-fluid" alt="Avatar">
+                  <div class="name">لورم</div>
+                  <div class="job">توسعه دهنده</div>
+                </div>
+                <!-- quotes -->
+                <p class="quotes">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- col -->
+        <div class="col-xl-3 col-lg-6">
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-12">
+              <!-- box -->
+              <div class="box">
+                <!-- user-info -->
+                <div class="user-info">
+                  <img data-src="{% static 'assets/images/avatars/03.jpg' %}" class="lazy avatar img-fluid" alt="Avatar">
+                  <div class="name">لورم</div>
+                  <div class="job">مدیرعامل کانکت سیستم</div>
+                </div>
+                <!-- quotes -->
+                <p class="quotes">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
+              </div>
+            </div>
+            <!-- col -->
+            <div class="col-12">
+              <!-- box -->
+              <div class="box">
+                <!-- user-info -->
+                <div class="user-info">
+                  <img data-src="{% static 'assets/images/avatars/04.jpg' %}" class="lazy avatar img-fluid" alt="Avatar">
+                  <div class="name">لورم</div>
+                  <div class="job">تولید کننده محتوا</div>
+                </div>
+                <!-- quotes -->
+                <p class="quotes">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- col -->
+        <div class="col-xl-3 col-lg-6">
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-12">
+              <!-- box -->
+              <div class="box">
+                <!-- user-info -->
+                <div class="user-info">
+                  <img data-src="{% static 'assets/images/avatars/05.jpg' %}" class="lazy avatar img-fluid" alt="Avatar">
+                  <div class="name">لورم</div>
+                  <div class="job">برنامه نویس</div>
+                </div>
+                <!-- quotes -->
+                <p class="quotes">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
+              </div>
+            </div>
+            <!-- col -->
+            <div class="col-12">
+              <!-- box -->
+              <div class="box">
+                <!-- user-info -->
+                <div class="user-info">
+                  <img data-src="{% static 'assets/images/avatars/06.jpg' %}" class="lazy avatar img-fluid" alt="Avatar">
+                  <div class="name">لورم</div>
+                  <div class="job">طراح</div>
+                </div>
+                <!-- quotes -->
+                <p class="quotes">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- col -->
+        <div class="col-xl-3 col-lg-6">
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-12">
+              <!-- box -->
+              <div class="box">
+                <!-- user-info -->
+                <div class="user-info">
+                  <img data-src="{% static 'assets/images/avatars/07.jpg' %}" class="lazy avatar img-fluid" alt="Avatar">
+                  <div class="name">لورم</div>
+                  <div class="job">همه میشناسین</div>
+                </div>
+                <!-- quotes -->
+                <p class="quotes">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
+              </div>
+            </div>
+            <!-- col -->
+            <div class="col-12">
+              <!-- box -->
+              <div class="box">
+                <!-- user-info -->
+                <div class="user-info">
+                  <img data-src="{% static 'assets/images/avatars/08.jpg' %}" class="lazy avatar img-fluid" alt="Avatar">
+                  <div class="name">لورم</div>
+                  <div class="job">طراح وب</div>
+                </div>
+                <!-- quotes -->
+                <p class="quotes">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- space -->
+      <div class="space space-sm"></div>
+
+    </div>
+  </div>
+
+  <!-- FAQs -->
+  <div class="faqs py-90" id="faqs">
+    <div class="container">
+      <!-- se-head -->
+      <div class="se-head">
+        <h3 class="se-title-1">با ارزیابی نیاز های شما بهترین راه حل را پیشنهاد میکنیم</h3>
+        <h4 class="se-title-2">سوالی دارید؟</h4>
+      </div>
+      <!-- buttons -->
+      <div class="buttons text-center">
+        <a href="#" class="btn btn-fill-primary shadow-off">جوابش اینجاست!</a>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

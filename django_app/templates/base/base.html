@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+	{% include 'base/head.html' %}
+
+	<meta name="keywords" content="{% block keywords %}{% endblock keywords %}">
+
+	<meta name="title" content="{% block title_meta %}{% endblock title_meta %}">
+
+	<meta name="description" content="{% block description %}{% endblock description %}">
+
+	<title>
+		{% block title %}
+		{% endblock title %}
+	</title>
+
+	<link rel="stylesheet" href="{% block page_css %}{% endblock page_css %}">
+</head>
+
+
+<body class="position-relative index-page light-theme" id="index-page">
+
+	{% include 'base/nav.html' %}
+
+	{% include 'base/theme-setting.html' %}
+
+	{% block content %}
+
+	{% endblock content %}
+
+	{% include 'base/contact-buble.html' %}
+
+	{% if page404 is None %}
+		{% include 'base/footer.html' %}
+	{% endif %}
+
+	{% include 'base/scripts.html' %}
+
+
+</body>
+
+</html>
