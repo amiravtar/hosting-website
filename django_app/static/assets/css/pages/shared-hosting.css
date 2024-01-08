@@ -9,13 +9,13 @@
   color: var(--light);
 }
 .p-header{
-  background: linear-gradient(31deg, transparent,#e3dce8a1, #7a941d);
+  background: linear-gradient(31deg, transparent,#220039a1, #220039);
 }
 .d-header{
   background: #6b00b2;
 }
 .f-header{
-  background: linear-gradient(31deg, transparent,#b8b2bca1, #23895d);
+  background: linear-gradient(31deg, transparent,#220039a1, #220039);
 }
 @media only screen and (max-width: 767.98px) {
   .header {

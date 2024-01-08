@@ -85,7 +85,7 @@
 
 
     // VPS Page > Filter Bar
-    $('#hosting-plans .filter-bar .item').on('click', function() {
+    $('#shared-hosting-page .filter-bar .item').on('click', function() {
       // vars
       const e = $(this).data('show');
       $('.filter-' + e).addClass('show').siblings().removeClass('show');
